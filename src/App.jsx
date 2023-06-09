@@ -1,11 +1,16 @@
 import logo from "./img/Group.svg";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
   const [darkMode, setDarkMode] = useState(true);
   const toggleDarkMode = () => {
     setDarkMode((prevMode) => !prevMode);
-  }
+  };
+
+  useEffect(() => {
+    console.log("useEffect done");
+  }, []);
+
   return (
     <div className="App">
       <div className={darkMode ? "container" : "container light"}>
